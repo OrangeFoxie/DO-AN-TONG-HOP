@@ -6,12 +6,13 @@
 #property copyright "Copyright 2019, MetaQuotes Software Corp."
 #property link      "https://www.mql5.com"
 #property version   "1.00"
-#include <orfox/Fox_class.mqh>
+#include <Fox_class.mqh>
 
 input int   StopLoss = 30;
 input int   TakeProfit = 35;
 input int   Indi_01_Period = 10;
 input int   Indi_03_Period = 10;
+input int   Indi_04_Period = 1;
 input double   Lots = 0.2;
 input int   Margin_Chk  =  9;
 input double   Trd_percent = 11;
@@ -29,7 +30,7 @@ Fox_class fox;
 int OnInit()
   {
 //---
-   fox.doInit(Indi_01_Period,ADX_Period,MA_Period,Indi_03_Period);
+   fox.doInit(Indi_01_Period,ADX_Period,MA_Period,Indi_03_Period,Indi_04_Period);
    fox.setPeriod(_Period);
    fox.setSymbol(_Symbol);
    fox.setMagic(EA_magic);
